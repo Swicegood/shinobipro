@@ -11,3 +11,7 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+            - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
+            - 'docker pull $DOCKER_USERNAME/shinobipro:latest || true'
+            - 'docker build --cache-from=$DOCKER_USERNAME/shinobipro:latest -t $DOCKER_USERNAME/shinobipro:latest .'
+            - 'docker push $DOCKER_USERNAME/shinobipro:latest'
