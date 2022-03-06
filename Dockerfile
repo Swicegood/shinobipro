@@ -1,5 +1,5 @@
 FROM migoller/shinobidocker:debian
-RUN apt update && apt install -y apt-utils nano
+RUN apt update && apt install -y apt-utils nano sudo
 ADD INSTALL.sh /opt/shinobi/plugins/face/
 RUN chmod +x  /opt/shinobi/plugins/face/INSTALL.sh
 RUN /usr/bin/yes no | /opt/shinobi/plugins/face/INSTALL.sh
