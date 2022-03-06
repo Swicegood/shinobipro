@@ -1,5 +1,6 @@
 #!/bin/bash
 DIR=`dirname $0`
+cd $DIR
 if [ -x "$(command -v apt)" ]; then
     sudo apt update -y
 fi
