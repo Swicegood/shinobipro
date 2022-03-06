@@ -1,9 +1,0 @@
-{
-    "plug": "Face",
-    "tfjsBuild": "cpu",
-    "hostPort": 8090,
-    "key": "Face123123",
-    "mode": "host",
-    "type": "detector",
-    "connectionType": "websocket"
- }
