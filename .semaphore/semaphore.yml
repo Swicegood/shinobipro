@@ -1,0 +1,19 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - checkout
+            - echo $DOCKER_PASSWORD | docker login --username "$DOCKER_USERNAME" --password-stdin
+            - 'docker pull $DOCKER_USERNAME/shinobipro:latest || true'
+            - 'docker build --cache-from=$DOCKER_USERNAME/shinobipro:latest -t $DOCKER_USERNAME/shinobipro:latest .'
+            - 'docker push $DOCKER_USERNAME/shinobipro:latest'
+      secrets:
+        - name: dcokerhub
