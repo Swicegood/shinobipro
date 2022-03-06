@@ -1,0 +1,4 @@
+apps:
+  - script   : '/opt/shinobi/plugins/face/shinobi-face.js'
+    name     : 'shinobi-face'
+    kill_timeout  : 5000
