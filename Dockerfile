@@ -1,4 +1,4 @@
-FROM migoller/shinobidocker:nvidia
+FROM migoller/shinobidocker:debian
 RUN apt update && apt install -y apt-utils nano
 ADD INSTALL.sh /opt/shinobi/plugins/face/
 RUN chmod +x  /opt/shinobi/plugins/face/INSTALL.sh
